@@ -1,4 +1,71 @@
 # SDEV-255-M08-Final-Project
+These models and API definitions are structured to efficiently handle the operations related to managing courses and teachers within a database or a server application.
+Below are the Courses and Teachers data models represented as tables and a diagram, followed by an outline of the API endpoints in a table format.
+
+### Courses Data Model
+
+#### Diagram (Mermaid)
+```mermaid
+classDiagram
+    class Course {
+      +String ID (PK)
+      +String Name
+      +String Description
+      +String Subject Area
+      +Integer Credits
+    }
+```
+
+#### Table (Markdown)
+| Field         | Data Type | Description                             | Constraint    |
+|---------------|-----------|-----------------------------------------|---------------|
+| ID            | String    | Unique identifier for the course        | Primary Key   |
+| Name          | String    | The name of the course                  | Required      |
+| Description   | String    | A detailed description of the course    | Required      |
+| Subject Area  | String    | The subject area the course pertains to | Required      |
+| Credits       | Integer   | Number of credits the course is worth   | Required      |
+
+### Teachers Data Model
+
+#### Diagram (Mermaid)
+```mermaid
+classDiagram
+    class Teacher {
+      +String ID (PK)
+      +String Name
+    }
+```
+
+#### Table (Markdown)
+| Field | Data Type | Description                             | Constraint    |
+|-------|-----------|-----------------------------------------|---------------|
+| ID    | String    | Unique identifier for the teacher       | Primary Key   |
+| Name  | String    | Full name of the teacher                | Required      |
+
+### Task 2: Build Backend API
+
+#### API Endpoints Table (Markdown)
+
+##### Courses API
+
+| Method | Endpoint            | Description                            |
+|--------|---------------------|----------------------------------------|
+| POST   | `/courses`          | Create a new course                    |
+| GET    | `/courses`          | Retrieve all courses                   |
+| GET    | `/courses/:id`      | Retrieve details of a specific course  |
+| PUT    | `/courses/:id`      | Update a specific course               |
+| DELETE | `/courses/:id`      | Delete a specific course               |
+
+##### Teachers API
+
+| Method | Endpoint          | Description                |
+|--------|-------------------|----------------------------|
+| POST   | `/teachers`       | Register a new teacher     |
+| POST   | `/auth/login`     | Authenticate a teacher     |
+
+
+---
+
 This task list provides a roadmap for developing a comprehensive course management and student registration system. Adjustments may be needed based on testing feedback and evolving project requirements.
 
 ### **Stage 1: Development of Course Management System**
